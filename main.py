@@ -1,24 +1,11 @@
-import os
-
-from kivy.core.window import Window
 from kivy.lang import Builder
-from kivy.metrics import dp
-
+from kivy.properties import ListProperty
 from kivymd.app import MDApp
-from kivymd.uix.filemanager import MDFileManager
-from kivymd.uix.snackbar import MDSnackbar, MDSnackbarText
+from plyer import filechooser
 
 KV = '''
 MDScreen:
     md_bg_color: self.theme_cls.backgroundColor
-
-    MDButton:
-        pos_hint: {"center_x": .5, "center_y": 0.9}
-        on_release: app.file_manager_open()
-        
-
-        MDButtonText:
-            text: "Open manager"
             
             
     MDBoxLayout:
@@ -26,6 +13,12 @@ MDScreen:
         pos_hint: {"center_x": .5, "center_y": .5}
         size_hint: .4, .7
         md_bg_color: self.theme_cls.onSurfaceVariantColor
+        
+            
+        FileChoose:
+        size_hint_y: 0.1
+        on_release: self.choose()
+        text: 'Select a file'
 
         FitImage:
             id: image_show
@@ -36,57 +29,39 @@ MDScreen:
 class Example(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        Window.bind(on_keyboard=self.events)
-        self.manager_open = False
-        self.file_manager = MDFileManager(
-            exit_manager=self.exit_manager, select_path=self.select_path
-        )
 
-    def build(self):
-        self.theme_cls.theme_style = "Dark"
-        return Builder.load_string(KV)
+    '''
+    Button that triggers 'filechooser.open_file()' and processes
+    the data response from filechooser Activity.
+    '''
 
-    def file_manager_open(self):
-        self.file_manager.show(
-            os.path.expanduser("~"))  # output manager to the screen
-        self.manager_open = True
+    selection = ListProperty([])
 
-    def select_path(self, path: str):
+    def choose(self):
         '''
-        It will be called when you click on the file name
-        or the catalog selection button.
-
-        :param path: path to the selected directory or file;
+        Call plyer filechooser API to run a filechooser Activity.
         '''
+        filechooser.open_file(on_selection=self.handle_selection)
 
-        self.exit_manager()
-        MDSnackbar(
-            MDSnackbarText(
-                text=path,
-            ),
-            y=dp(24),
-            pos_hint={"center_x": 0.5},
-            size_hint_x=0.8,
-        ).open()
+    def handle_selection(self, selection):
+        '''
+        Callback function for handling the selection response from Activity.
+        '''
+        self.selection = selection
 
+    def on_selection(self, *a, **k):
+        '''
+        Update TextInput.text after FileChoose.selection is changed
+        via FileChoose.handle_selection.
+        '''
+        path = self.selection[0]
         print(path)
         # check path is a picture
         if path.endswith(".png") or path.endswith(".jpg") or path.endswith(".jpeg"):
             self.root.ids.image_show.source = path
 
-    def exit_manager(self, *args):
-        '''Called when the user reaches the root of the directory tree.'''
-
-        self.manager_open = False
-        self.file_manager.close()
-
-    def events(self, instance, keyboard, keycode, text, modifiers):
-        '''Called when buttons are pressed on the mobile device.'''
-
-        if keyboard in (1001, 27):
-            if self.manager_open:
-                self.file_manager.back()
-        return True
-
+    def build(self):
+        self.theme_cls.theme_style = "Dark"
+        return Builder.load_string(KV)
 
 Example().run()
