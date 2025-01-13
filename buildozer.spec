@@ -13,7 +13,7 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = py,png,jpg,kv,atlas,jar
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -175,11 +175,11 @@ android.ndk_api = 24
 # down the build process. Allows wildcards matching, for example:
 # OUYA-ODK/libs/*.jar
 #android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
-android.add_jars = onnx.jar
+android.add_jars = lib/onnx.jar
 
 # (list) List of Java files to add to the android project (can be java or a
 # directory containing the files)
-android.add_src = org/example
+# android.add_src =
 
 # (list) Android AAR archives to add
 #android.add_aars =
@@ -203,7 +203,7 @@ android.add_src = org/example
 #android.add_resources =
 
 # (list) Gradle dependencies to add
-android.gradle_dependencies = “com.microsoft.onnxruntime:onnxruntime:1.20.0”
+# android.gradle_dependencies = com.microsoft.onnxruntime:onnxruntime:1.20.0
 
 # (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
 # contains an 'androidx' package, or any package from Kotlin source.

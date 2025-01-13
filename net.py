@@ -1,7 +1,7 @@
 from PIL import Image
 import numpy as np
 import os
-os.environ['CLASSPATH'] = "onnx.jar:" + os.environ.get('CLASSPATH', '')
+os.environ['CLASSPATH'] = "lib/onnx.jar:" + os.environ.get('CLASSPATH', '')
 
 from jnius import autoclass
 
