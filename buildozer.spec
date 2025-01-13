@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,plyer,kivymd
+requirements = python3,Cython,kivy,kivymd,pillow,numpy,pyjnius
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -105,7 +105,7 @@ android.permissions = android.permission.READ_EXTERNAL_STORAGE
 #android.api = 31
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
+android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -114,7 +114,7 @@ android.permissions = android.permission.READ_EXTERNAL_STORAGE
 #android.ndk = 23b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-#android.ndk_api = 21
+android.ndk_api = 24
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -175,10 +175,11 @@ android.permissions = android.permission.READ_EXTERNAL_STORAGE
 # down the build process. Allows wildcards matching, for example:
 # OUYA-ODK/libs/*.jar
 #android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
+android.add_jars = onnx.jar
 
 # (list) List of Java files to add to the android project (can be java or a
 # directory containing the files)
-#android.add_src =
+android.add_src = org/example
 
 # (list) Android AAR archives to add
 #android.add_aars =
@@ -202,7 +203,7 @@ android.permissions = android.permission.READ_EXTERNAL_STORAGE
 #android.add_resources =
 
 # (list) Gradle dependencies to add
-#android.gradle_dependencies =
+android.gradle_dependencies = “com.microsoft.onnxruntime:onnxruntime:1.20.0”
 
 # (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
 # contains an 'androidx' package, or any package from Kotlin source.
