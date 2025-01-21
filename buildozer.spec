@@ -13,7 +13,7 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,jar
+source.include_exts = py,png,jpg,kv,atlas,onnx
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,Cython,kivy,kivymd,pillow,numpy,pyjnius
+requirements = python3,Cython,kivy,kivymd,numpy,opencv
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -64,10 +64,10 @@ orientation = portrait
 # author = © Copyright Info
 
 # change the major version of python used by the app
-osx.python_version = 3
+# osx.python_version = 3
 
 # Kivy version to use
-osx.kivy_version = 2.3.1
+# osx.kivy_version = 2.3.1
 
 #
 # Android specific
@@ -175,7 +175,6 @@ android.ndk_api = 24
 # down the build process. Allows wildcards matching, for example:
 # OUYA-ODK/libs/*.jar
 #android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
-android.add_jars = lib/onnx.jar
 
 # (list) List of Java files to add to the android project (can be java or a
 # directory containing the files)

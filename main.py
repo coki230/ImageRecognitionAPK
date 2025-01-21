@@ -5,7 +5,7 @@ from kivymd.app import MDApp
 from kivymd.uix.filemanager import MDFileManager
 from kivymd.toast import toast
 from kivy.utils import platform
-import net
+import cv
 import os
 
 KV = '''
@@ -61,7 +61,7 @@ class Example(MDApp):
         self.exit_manager()
         self.root.ids.image_show.source = path
         try:
-            catigory = net.parse_img(path)
+            catigory = cv.pars_img(path)
             self.root.ids.image_label.text = catigory
         except Exception as e:
             self.root.ids.image_label.text = str(e)
