@@ -1,4 +1,4 @@
-** Other languages：[English](README.md), [中文](README_zh.md)。 **
+* Other languages：[English](README.md), [中文](README_zh.md)。 
 # Project Introduction:
 This project is used to identify mobile phone pictures and can identify 1000 types. The most important thing is that this project ** does not require an Internet connection, does not require an Internet connection, does not require an Internet connection. Important things should be said three times. **
 And this is just a framework, **you can call any model, and you can migrate to other platforms with a small amount of code**, including iOS, Windows, Mac, etc.
