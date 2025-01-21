@@ -4,7 +4,7 @@ This project is used to identify mobile phone pictures and can identify 1000 typ
 And this is just a framework, **you can call any model, and you can migrate to other platforms with a small amount of code**, including iOS, Windows, Mac, etc.
 So once you are familiar with this framework, you can call many large models locally without an Internet connection to achieve specific functions.
 ## Project dependencies:
-This project says that it publishes projects based on [Buildozer](https://buildozer.readthedocs.io/en/latest/)
+This project published based on [Buildozer](https://buildozer.readthedocs.io/en/latest/)
 The interface is drawn with [kivymd](https://kivymd.readthedocs.io/en/latest/).
 So if you plan to develop it yourself, you need to be familiar with the above two projects.
 ## Release process:
