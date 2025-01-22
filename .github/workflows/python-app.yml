@@ -27,7 +27,11 @@ jobs:
         export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/Library/Frameworks/Python.framework/Versions' | tr '\n' ':')
         export PATH="/opt/homebrew/bin/:$PATH"
         echo $PATH
+        echo "=========1111111111========"
+        /opt/homebrew/bin/python3.9 --version
+        echo "=========2222222222========"
         /opt/homebrew/bin/python3 --version
+        echo "=========33333333333========"
         echo "================="
         python --version
         alias python='python3.9'
