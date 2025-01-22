@@ -22,8 +22,12 @@ jobs:
       run: |
         brew install pyenv
         pyenv install 3.9.20
+        export PATH="$HOME/.pyenv/bin:$PATH"
         pyenv global 3.9.20
+        echo "================="
         python --version
+        pyenv version
+        echo "================="
         python -m pip install --upgrade pip
         pip install buildozer
         pip install kivy
