@@ -35,4 +35,5 @@ jobs:
         pip list -v
     - name: generate apk
       run: |
+        export PATH="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai/bin:$PATH"
         buildozer -v android debug
