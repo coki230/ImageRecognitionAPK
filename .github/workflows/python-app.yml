@@ -36,4 +36,5 @@ jobs:
     - name: generate apk
       run: |
         export PATH="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai/bin:$PATH"
+        export PYTHONNOUSERSITE=False
         buildozer -v android debug
