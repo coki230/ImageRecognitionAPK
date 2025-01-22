@@ -24,3 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install buildozer
         pip install Cython==0.29.33
+    - name: generate apk
+      run: |
+        buildozer -v android debug
