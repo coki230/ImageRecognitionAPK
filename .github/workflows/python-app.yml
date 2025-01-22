@@ -20,6 +20,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install dependencies
       run: |
+        brew install pyenv
+        pyenv install 3.9.20
+        pyenv global 3.9.20
         python --version
         python -m pip install --upgrade pip
         pip install buildozer
