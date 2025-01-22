@@ -20,26 +20,18 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install dependencies
       run: |
-        echo "================="
-        echo $PATH
         brew install python@3.9
         brew --prefix python@3.9
         export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/Library/Frameworks/Python.framework/Versions' | tr '\n' ':')
         export PATH="/opt/homebrew/bin/:$PATH"
-        echo $PATH
-        echo "=========1111111111========"
-        /opt/homebrew/bin/python3.9 --version
-        echo "=========2222222222========"
-        /opt/homebrew/bin/python3 --version
-        echo "=========33333333333========"
         echo "================="
         python --version
-        alias python='python3.9'
-        alias python3='python3.9'
-        alias python-config='python3.9-config'
-        alias python3-config='python3.9-config'
-        alias pip='pip3.9'
-        alias pip3='pip3.9'
+        alias python='/opt/homebrew/bin/python3.9'
+        alias python3='/opt/homebrew/bin/python3.9'
+        alias python-config='/opt/homebrew/bin/python3.9-config'
+        alias python3-config='/opt/homebrew/bin/python3.9-config'
+        alias pip='/opt/homebrew/bin/pip3.9'
+        alias pip3='/opt/homebrew/bin/pip3.9'
         echo "================="
         python --version
         echo "================="
