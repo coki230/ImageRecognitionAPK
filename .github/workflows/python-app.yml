@@ -22,7 +22,9 @@ jobs:
       run: |
         python --version
         python -m pip install --upgrade pip
-        pip install buildozer, kivy, kivymd
+        pip install buildozer
+        pip install kivy
+        pip install kivymd
         pip install Cython==0.29.33
         pip list -v
     - name: generate apk
