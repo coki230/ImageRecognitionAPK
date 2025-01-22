@@ -37,4 +37,5 @@ jobs:
       run: |
         export PATH="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai/bin:$PATH"
         export PYTHONNOUSERSITE=False
+        export VIRTUAL_ENV="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai"
         buildozer -v android debug
