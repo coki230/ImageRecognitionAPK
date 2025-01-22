@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         brew uninstall --ignore-dependencies python
-        brew install python@3.9.20
+        brew install python@3.9
         echo "================="
         python --version
         echo "================="
