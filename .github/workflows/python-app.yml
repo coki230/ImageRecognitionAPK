@@ -18,12 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.9.20
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.9.20"
     - name: Install dependencies
       run: |
+        python --version
         python -m pip install --upgrade pip
         pip install buildozer
         pip install Cython==0.29.33
