@@ -22,7 +22,7 @@ jobs:
       run: |
         brew install python@3.9
         brew --prefix python@3.9
-        export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/Library/Frameworks/Python.framework/Versions' | tr '\n' ':')
+        # export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/Library/Frameworks/Python.framework/Versions' | tr '\n' ':')
         export PATH="/opt/homebrew/bin/:$PATH"
         echo "================="
         python --version
