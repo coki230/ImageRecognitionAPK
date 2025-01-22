@@ -26,12 +26,14 @@ jobs:
         export PATH="/opt/homebrew/bin/:$PATH"
         echo "================="
         python --version
-        alias python='/opt/homebrew/bin/python3.9'
-        alias python3='/opt/homebrew/bin/python3.9'
-        alias python-config='/opt/homebrew/bin/python3.9-config'
-        alias python3-config='/opt/homebrew/bin/python3.9-config'
-        alias pip='/opt/homebrew/bin/pip3.9'
-        alias pip3='/opt/homebrew/bin/pip3.9'
+        echo 'export PATH="/opt/homebrew/bin/:$PATH"' >> ~/.bashrc
+        echo 'alias python="python3.9"' >> ~/.bashrc
+        echo 'alias python3="python3.9"' >> ~/.bashrc
+        echo 'alias python-config="python3.9-config"' >> ~/.bashrc
+        echo 'alias python3-config="python3.9-config"' >> ~/.bashrc
+        echo 'alias pip="pip3.9"' >> ~/.bashrc
+        echo 'alias pip3="pip3.9"' >> ~/.bashrc
+        source ~/.bashrc
         echo "================="
         python --version
         echo "================="
