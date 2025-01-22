@@ -22,6 +22,8 @@ jobs:
       run: |
         brew uninstall --ignore-dependencies python
         brew install python@3.9
+        brew --prefix python@3.9
+        export PATH="/usr/local/opt/python@3.9/bin:$PATH"
         echo "================="
         python --version
         echo "================="
