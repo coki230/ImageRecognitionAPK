@@ -25,8 +25,14 @@ jobs:
         brew install python@3.9
         brew --prefix python@3.9
         export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/Library/Frameworks/Python.framework/Versions' | tr '\n' ':')
-        export PATH="/opt/homebrew/opt/python@3.9/bin:$PATH"
+        export PATH="/opt/homebrew/opt/python@3.9/bin:/opt/homebrew/bin/:$PATH"
         echo $PATH
+        alias python='python3.9'
+        alias python3='python3.9'
+        alias python-config='python3.9-config'
+        alias python3-config='python3.9-config'
+        alias pip='pip3.9'
+        alias pip3='pip3.9'
         echo "================="
         python --version
         echo "================="
