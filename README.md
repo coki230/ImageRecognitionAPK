@@ -10,6 +10,6 @@ So if you plan to develop it yourself, you need to be familiar with the above tw
 ## Release process:
 If you have fully read the [Buildozer](https://buildozer.readthedocs.io/en/latest/) documentation, and installed the corresponding installation package. In the console, cd to the root directory of this project and execute: `buildozer -v android debug`. This command will generate a middleware dependency directory `.buildozer` in the root directory of this project. After the execution is completed, a `bin` directory will be generated, and an apk file will be generated in it. Install this file to the phone and use it directly.
 **Note that you need to enable the read file permission for this apk**
-## Finally, advertise for yourself
+## Finally, advertise for myself
 I am an IT veteran and a full-stack engineer who is familiar with machine learning and backend development. If there are remote work opportunities or technical immigration opportunities, I would be happy to discuss with you. Thank you
 If you are interested in the above, please email me. xiao230coki@gmail.com
