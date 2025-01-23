@@ -21,23 +21,16 @@ jobs:
       run: |
         mkdir -p /Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/myapp/build/outputs/apk/debug/
         echo "tesatsafasdtesatsdf" > myapp-debug.apk
-        
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-          GITHUB_TOKEN: ${{ github.token }}
+
+
+    - name: Create Release and Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: TODO New Release.
         draft: false
         prerelease: false
-    - name: Upload APK to Release
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ github.token }}
-      with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: /Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/myapp/build/outputs/apk/debug/myapp-debug.apk
-          asset_name: myapp-debug.apk
-          asset_content_type: application/vnd.android.package-archive
+        files: |
+          /Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/myapp/build/outputs/apk/debug/myapp-debug.apk
