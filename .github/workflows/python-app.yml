@@ -17,30 +17,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: |
-        brew install python@3.9
-        python3.9 -m venv ai
-        ls -a
-        source ai/bin/activate
-        echo "================="
-        python --version
-        echo "================="
-        python -m pip install --upgrade pip
-        pip install buildozer
-        pip install kivy
-        pip install kivymd
-        pip install Cython==0.29.33
-        pip list -v
     - name: generate apk
       run: |
-        export PATH="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai/bin:$PATH"
-        export PYTHONNOUSERSITE=False
-        export VIRTUAL_ENV="/Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/ai"
-        export PYTHONFORANDROID_PREREQUISITES_INSTALL_INTERACTIVE=0
-        buildozer -v android debug
-
+        mkdir -p /Users/runner/work/ImageRecognitionAPK/ImageRecognitionAPK/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/myapp/build/outputs/apk/debug/
+        echo "tesatsafasdtesatsdf" > myapp-debug.apk
+        
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
