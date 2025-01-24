@@ -4,7 +4,7 @@ This project is used to identify mobile phone pictures and can identify 1000 typ
 And this is just a framework, **you can call any model, and you can migrate to other platforms with a small amount of code**, including iOS, Windows, Mac, etc.
 So once you are familiar with this framework, you can call many large models locally without an Internet connection to achieve specific functions.
 ## demo
-<img src="doc/demo.gif" width = "200" height = "350" alt="图片说明" align=center />
+<img src="doc/demo.gif" width = "250" height = "400" alt="图片说明" align=center />
 
 ## Project dependencies:
 This project published based on [Buildozer](https://buildozer.readthedocs.io/en/latest/)
