@@ -3,6 +3,9 @@
 此项目用来识别手机的图片，可以识别1000种类型。最最重要的是此项目**不需要联网，不需要联网，不需要联网。重要的事情说三遍。**
 而且这只是搭建了一个框架，**可以调用任意模型，可以少量代码迁移到其他平台**，包括ios系统，windows系统，mac系统等等。
 所以熟悉了这套框架，你可以在你本地不需要联网调用很多大模型，来实现特定的功能。
+## 实例参考
+<img src="doc/demo.gif" width = "250" height = "400" alt="图片说明" align=center />
+
 ## 项目依赖：
 此项目说基于[Buildozer](https://buildozer.readthedocs.io/en/latest/)来发布项目
 界面是用[kivymd](https://kivymd.readthedocs.io/en/latest/)画出来的。
